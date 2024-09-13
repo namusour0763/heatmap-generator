@@ -209,7 +209,7 @@ func drawMonths(img *image.RGBA, startDate time.Time) {
 				Dst:  img,
 				Src:  image.NewUniform(color.Black),
 				Face: basicfont.Face7x13,
-				Dot:  fixed.Point26_6{X: fixed.Int26_6(x << 6), Y: fixed.Int26_6((titleHeight + 15) << 6)},
+				Dot:  fixed.Point26_6{X: fixed.I(x), Y: fixed.I((titleHeight + 15))},
 			}
 			d.DrawString(monthNames[currentMonth-1])
 		}
@@ -241,7 +241,7 @@ func drawLegend(img *image.RGBA, thresholds []int) error {
 			Dst:  img,
 			Src:  image.NewUniform(color.Black),
 			Face: basicfont.Face7x13,
-			Dot:  fixed.Point26_6{X: fixed.Int26_6((legendX + 30) << 6), Y: fixed.Int26_6((legendY + i*30 + 15) << 6)},
+			Dot:  fixed.Point26_6{X: fixed.I((legendX + 30)), Y: fixed.I((legendY + i*30 + 15))},
 		}
 		d.DrawString(label)
 	}
