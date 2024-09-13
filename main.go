@@ -192,7 +192,7 @@ func drawTitle(img *image.RGBA, title string) {
 		Dst:  img,
 		Src:  image.NewUniform(color.Black),
 		Face: basicfont.Face7x13,
-		Dot:  fixed.Point26_6{X: fixed.Int26_6(10 << 6), Y: fixed.Int26_6(25 << 6)},
+		Dot:  fixed.Point26_6{X: fixed.I(10), Y: fixed.I(25)},
 	}
 	d.DrawString(title)
 }
